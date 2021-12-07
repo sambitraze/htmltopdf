@@ -1,0 +1,129 @@
+<html>
+<style>
+    @media print {
+        body {
+            width: 21cm;
+            height: 29.7cm;
+            margin: 0;
+            /* top right bottom left */
+        }
+    }
+
+    .key {
+        color: #1681BE;
+        font-weight: bold;
+        font-size: 20px;
+        padding-left: 8px;
+    }
+
+    .value {
+        font-size: 20px;
+        padding-left: 8px;
+    }
+
+    .fullborder {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .width100 {
+        width: 100%;
+    }
+
+    .width75 {
+        width: 75%;
+    }
+
+    .width25 {
+        width: 25%;
+    }
+</style>
+<title>Report</title>
+
+<body style="padding: 24px; font-family: sans-serif;">
+    <table style="width:100%">
+        <tr>
+            <td><img src="https://propview.ap-south-1.linodeobjects.com/logo.jpg" alt="" width="80" height="80"></td>
+            <td style="text-align: right;">
+                <p style="
+                color: #1681BE; font-weight: bold;">#204, 2nd floor, Vipul Trade Centre, Sector 48, <br>
+                    Sohna Road, Gurugram - 122 018, Haryana<br>
+                    Phone: +91 95821 95821<br>
+                    <a href="www.propdial.com" style="
+                    color: #1681BE;">www.propdial.com</a>
+                </p>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <h1 style="color: red; text-align: center;">
+        Full Inspection Report
+    </h1>
+    <br>
+    <br>
+    <br>
+    <table class="fullborder" style="width:100%">
+        <tr>
+            <td class="key fullborder">
+                Site Visit Date:
+            </td>
+            <td class="value width75 fullborder">
+                01/04/2021
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <table class="fullborder" style="width:100%">
+        <tr>
+            <td class="key fullborder">
+                Property Owner:
+            </td>
+            <td class="value width75 fullborder">
+                Sanjay Sen
+            </td>
+        </tr>
+        <tr>
+            <td class="key fullborder">
+                Tenant Name:
+            </td>
+            <td class="value width75 fullborder">
+                Naveen Upadhyay
+            </td>
+        </tr>
+        <tr>
+            <td class="key fullborder">
+                Property Address:
+            </td>
+            <td class="value width75 fullborder">
+                C1-B013, Carlton Estate, DLF Phase V, Gurugram - 122009, Haryana
+            </td>
+        </tr>
+        <tr>
+            <td class="key fullborder">
+                BHK:
+            </td>
+            <td class="value width75 fullborder">
+                3 BHK
+            </td>
+        </tr>
+        <tr>
+            <td class="key fullborder">
+                Executive Name:
+            </td>
+            <td class="value width75 fullborder">
+                Manas Behera
+            </td>
+        </tr>
+    </table>
+    <div id="demo"></div>
+    <script>
+        var x ="", i;
+        for (i=1; i<=6; i++) {
+          x = x + "<h" + i + ">Heading " + i + "</h" + i + ">";
+        }
+        document.getElementById("demo").innerHTML = x;
+        </script>
+</body>
+
+</html>
