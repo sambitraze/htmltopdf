@@ -8,8 +8,10 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
+app.set('view engine', 'ejs');
+
 app.get('/', async (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.render('index', {id:'58'});
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

@@ -64,12 +64,16 @@
         width: 10%;
     }
 </style>
+
 <head>
     <title>Full Inspection Report</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body style="padding: 24px; font-family: sans-serif;">
+    <p style="display: none;" id="inspection_id">
+        <%= id %>
+    </p>
     <table style="border: 0px solid black;">
         <tr style=" border: 0px solid black;">
             <td style=" border: 0px solid black;"><img src="https://propview.ap-south-1.linodeobjects.com/logo.jpg"
@@ -92,7 +96,6 @@
             </td>
         </tr>
     </table>
-    <h1><%= id %></h1>
     <br>
     <h1 style="color: red; text-align: center;">
         Full Inspection Report
@@ -105,8 +108,7 @@
             <td class="key ">
                 Site Visit Date:
             </td>
-            <td class="value width75 ">
-                01/04/2021
+            <td class="value width75 " id="visitdate">
             </td>
         </tr>
     </table>
@@ -734,6 +736,15 @@
             document.getElementById('info').style.display = 'none';
             window.print();
             document.getElementById('info').style = 'border: 0px solid black;';
+        }
+        window.onload = async function () {
+            var inspection_id = document.getElementById("inspection_id").childNodes[0].nodeValue;
+            const response = await fetch('https://api.propdial.co.in/api/inspection/get/' + inspection_id);
+            const myJson = await response.json();
+            console.log(myJson.data.inspection[0]);
+            var date = myJson.data.inspection[0].createdAt;
+            var d = new Date(date);
+            document.getElementById("visitdate").innerHTML = d.toLocaleString();
         }
     </script>
 </body>
